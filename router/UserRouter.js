@@ -24,6 +24,14 @@ router.post("/login", (req, res) => {
   res.json({ token });
 });
 
+router.post("/logout", (req, res) => {
+  const token = req.headers["authorization"];
+  if (!token) return res.status(400).json({ error: "Token missing" });
+  activeTokens = activeTokens.filter(t => t !== token);
+  res.json({ message: "Logged out successfully" });
+});
+
+
 router.get("/users", (_, res) => res.json(users));
 
 module.exports = router;
