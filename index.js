@@ -1,22 +1,3 @@
-// const express = require('express');
-// const cors = require('cors');
-
-// const app = express();
-// const port=3000;
-// app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
-
-// app.use(express.json());
-// const booksRouter=require("./router/router")
-// const userRouter=require("./router/UserRouter")
-
-
-// app.use("/books",booksRouter)
-// app.use("/users",userRouter)
-
-
-// app.listen(port, () =>
-//   console.log(`Server running on http://localhost:${port}`)
-// );
 
 
 
@@ -30,10 +11,9 @@ app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 app.use(express.json());
 
 const booksRouter = require('./router/router');
-// אם יש לך Router נוסף, תשאירי אותו:
 const userRouter = require('./router/UserRouter');
 
 app.use('/books', booksRouter);
-app.use('/users', userRouter);
+app.use('/user', userRouter);
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
