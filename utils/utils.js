@@ -1,4 +1,5 @@
 
+let users = []; 
  function generateToken(length = 32) {
   const chars =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -8,4 +9,10 @@
   }
   return token;
 }
+
+
+
+
+
+
 module.exports = { generateToken };

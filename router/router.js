@@ -1,15 +1,15 @@
 
 const express = require('express');
 const router = express.Router();
+const{isAuthorized}= require('../router/middlewere.js')  ;
 
 let books = [
   { id: 1, title: 'Book One', author: 'Alice' },
   { id: 2, title: 'Book Two', author: 'Bob' },
   { id: 3, title: 'Book Three', author: 'Carol' }
 ];
-
 // GET כל הספרים
-router.get('/', (req, res) => {
+router.get('/',isAuthorized, (req, res) => {
   res.json(books);
 });
 
